@@ -1,0 +1,270 @@
+/* Machiko's wireframe CSS */
+
+header {
+	background-color: #333;
+	color: #ffd707;
+	padding-right: 5%;
+	padding-left: 5%;
+	padding-top: 1px;
+}
+
+h2, h3 {
+	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+}
+
+h2 {
+	border-bottom: 2px solid #000;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+h3 {
+	font-size: 14px;
+	margin-bottom: 10px;
+	font-weight: 400;
+}
+
+header hgroup h2 {
+	color: #ffd707;
+}
+
+body {
+	font-family: 'Bitter', serif;
+	background-color: #f2f2f2;
+	border-top: 8px solid #f03;
+}
+#wrapper {
+	margin-right: 5%;
+	margin-left: 5%;
+}
+nav {
+	background: #222;
+	width: 100%;
+
+}
+nav ul {
+	color: #fff;	
+	font-size: 13px;
+	width: 100%;
+	margin-left: 0;
+	padding-left: 0;
+	display: inline;
+
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+}
+
+nav li {
+	list-style: none;
+	float: left;
+	margin-left: 0;
+	padding: 3px 15px;
+	border-left: 1px solid #000;
+	list-style: none;
+	display: inline;
+}
+
+nav li.first {
+	margin-left: 0;
+	border-left: none;
+	list-style: none;
+	display: inline;
+}
+
+#index {
+	padding-bottom: 40px;
+}
+#index table {
+	background: #d3d3d3;
+	color: #666;
+	font-size: 14px;
+	width: 100%;
+	padding: 2px;
+}
+
+#index table tr td {
+	border-left: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+#index thead {
+	background-color: #000;
+	color: #fff;
+}
+#index tbody tr:nth-child(odd){
+	background-color: #fff;
+}
+
+#index tbody tr:hover {
+	background-color: rgba(255, 0, 51, 0.75);
+	color: #fff;
+}
+
+#search-result {
+
+}
+
+#search-summary {
+	width: 30%;
+	float: right;
+}
+
+#search-summary {
+	background-color: #ffd707;
+	color: #000;
+	font-size: 12px;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+}
+
+#search-summary table tr {
+}
+
+#history-summary {
+	width: 20%;
+	float: right;
+}
+#history-summary ul {
+	color: #666;	
+	background-color: #ffd707;
+	font-size: 12px;
+	list-style: none;
+ 	margin-left: 0;
+ 	padding-left: 1em;
+ 	text-indent: -1em;
+
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+}
+
+.timeline_schools, .timeline_accomplishments, .timeline_experience {
+	width: 90%;
+	height: 100px;
+	border-top: 10px solid #fff;
+	margin: 70px auto;
+	position: relative;
+}
+
+.accomplishments, .schools, .experience {
+	display: inline-block;
+	width: 20%;
+
+	background: #e3e3e3;
+	margin-top: 10px;
+	padding: 2px;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+}
+
+.accomplishments:after, .schools:after, .experience:after {
+	position: absolute;
+	background: #ffd707;
+	top:-9px;
+	content: "  ";
+	border-radius: 50%;
+	border: 1px solid #222;
+	width: 7px;
+	height: 7px;
+
+}
+
+.accomplishments:before, .schools:before, .experience:before {
+	content: "enddate";
+	position: absolute;
+	top: -30px;
+}
+
+.accomplishments:hover, .schools:hover, .experience:hover {
+	background-color: #fff;
+}
+
+.skill {
+	display: inline-block;
+	width: 20%;
+
+	background: #e3e3e3;
+	margin-top: 15px;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+}
+
+.skill:after {
+	position: absolute;
+	background: #f03;
+	top:-20px;
+	content: "  ";
+	border-radius: 1%;
+	border: 1px solid #222;
+	width: 7px;
+	height: 30px;
+
+}
+
+
+.skill:before {
+	content: "enddate";
+	position: absolute;
+	top: -40px;
+}
+
+.skill:hover {
+	background-color: #fff;
+}
+
+
+textarea#note{
+	color:#666;
+	font-size:14px;
+	-moz-border-radius: 8px; 
+	-webkit-border-radius: 8px;
+	margin:0px 0px 10px 50px;
+	padding:10px;
+	height:75px;
+	width:550px;
+	border:#999 1px solid;
+}
+
+
+
+textarea#note:focus{
+	color:#000;
+	outline:none;
+	border:#f03 1px solid;
+}
+
+button {
+	background-color: #ffd707;
+	border: 2px solid #fff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+	text-transform: uppercase;
+
+}
+
+button:hover {
+	background-color: #f03;
+}
+
+
+
+footer {
+	background: #333;
+	color: #999;
+	margin-top: 30px;
+	padding-top: 50px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	border-bottom: 8px solid #f03;
+
+}
+
+
