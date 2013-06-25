@@ -39,33 +39,7 @@ $(document).ready(function() {
 		return false;
 	});
 
-	// submit form
-	// $('#userDataForm').submit(function() {
-	// 	var userData = {};
-	// 	userData.name_first 		= $('.name_first').val();
-	// 	userData.name_last 			= $('.name_last').val();
-	// 	userData.website			= $('.website').val();
-	// 	userData.linked_in 			= $('.linked_in').val();
-	// 	userData.twitter 			= $('.twitter').val();
-
-	// 	userData.email 				= $('.email').val();
-	// 	userData.phone				= $('.phone').val();
-	// 	userData.street_address		= $('.street_address').val();
-	// 	userData.zip_code			= $('.zip_code').val();
-	// 	userData.city				= $('.city').val();
-	// 	userData.state				= $('.state').val();
-
-	// 	// counter and interate to get school(s)
-	// 	userData.schools = [];
-	// 	var school_groups 			= $('.school_group');
-	// 	for (i = 0; i < school_groups.length; i++) {
-	// 		school 		= {};
-	// 		school.name = $(school_groups[i]).find('.schools_name').val();
-	// 		userData.schools.push(school); 
-	// 		}
-	// 		return false;
-	// 	});
-
+	// use .each on .school_groups
 	$('#userDataForm').submit(function() {
 		var userData = {};
 
@@ -83,8 +57,9 @@ $(document).ready(function() {
 		userData.state				= $('.state').val();
 
 		userData.schools = [];
-		var school_groups = $('.school_group');
 
+		var school_groups = $('.school_group');
+		
 		school_groups.each(function(index, item) {
 			userData.schools.push({
 				name 	: $(item).find('.schools_id').val(),
@@ -93,10 +68,10 @@ $(document).ready(function() {
 			});
 			
 		});
-				console.log(userData);
-				return false;
-		});
+			console.log(userData);
+			return false;
 	});
+});
 
 
 
