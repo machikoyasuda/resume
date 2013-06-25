@@ -68,6 +68,20 @@ $(document).ready(function() {
 
 	$('#userDataForm').submit(function() {
 		var userData = {};
+
+		userData.name_first 		= $('.name_first').val();
+		userData.name_last 			= $('.name_last').val();
+		userData.website			= $('.website').val();
+		userData.linked_in 			= $('.linked_in').val();
+		userData.twitter 			= $('.twitter').val();
+
+		userData.email 				= $('.email').val();
+		userData.phone				= $('.phone').val();
+		userData.street_address		= $('.street_address').val();
+		userData.zip_code			= $('.zip_code').val();
+		userData.city				= $('.city').val();
+		userData.state				= $('.state').val();
+
 		userData.schools = [];
 		var school_groups = $('.school_group');
 
@@ -75,7 +89,7 @@ $(document).ready(function() {
 			userData.schools.push({
 				name 	: $(item).find('.schools_id').val(),
 				major 	: $(item).find('.schools_major').val(),
-				minor	: $(item).find('.schools_minor').val()
+				minor	: $(item).find('.schools_minor').val(),
 			});
 			
 		});
