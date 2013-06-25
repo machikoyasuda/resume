@@ -29,9 +29,9 @@ $(document).ready(function(){
 
 			schoolLoop(); 
 			accomplishmentsLoop();
+			experienceLoop();
 
-
-			// schools
+			// start schools
 			function schoolLoop() {
 				var schools = response.responseJSON.schools; // set schools as hash
 				for (i = 0; i < schools.length; i++) { // loop
@@ -41,13 +41,15 @@ $(document).ready(function(){
 					var schools_minor = response.responseJSON.schools[i].minor;
 					var schools_start_month_year = response.responseJSON.schools[i].start_month_year;
 
-					//console.log(response.responseJSON.schools[i].degree);
-					//console.log(schools_degree);
+					console.log(response.responseJSON.schools[i].degree); // verify in console
+					console.log(schools_degree);
 
 					$('.timeline_schools').append("<div class='schools'>" + "<ul><li>" + schools_degree + "</li><li>" + schools_major + "</li></ul>" + "</div>");
 				}
 			};
-			// accomplishments
+			// end schools
+
+			// start accomplishments
 			function accomplishmentsLoop() {
 				var accomplishments = response.responseJSON.accomplishments; // set accomplishments as hash
 				for (i = 0; i < accomplishments.length; i++) { // loop
@@ -60,14 +62,25 @@ $(document).ready(function(){
 
 				}
 			};
+			// end accomplishments
 
-			
+			// start experience
+			function experienceLoop() {
+				var experience = response.responseJSON.experience; // set experience as hash
+				for (i = 0; i < experience.length; i++) { // loop
+					var experience_organization  = response.responseJSON.experience[i].organization; 
+					var experience_project = response.responseJSON.experience[i].project;
+					var experience_role = response.responseJSON.experience[i].role;
+					var experience_start_month_year = response.responseJSON.experience[i].start_month_year;
+					var experience_end_month_year = response.responseJSON.experience[i].end_month_year;
+					var experience_location = response.responseJSON.experience[i].location;
+					var experience_responsibilities  = response.responseJSON.experience[i].responsibilities;
 
-
-
-
-
-
+				console.log(response.responseJSON.experience[i]);
+				$('.timeline_experience').append("<div class='experience'>" + "<ul><li>" + experience_role + "</li><li>" + experience_responsibilities + "</li></ul>" + "</div>");
+				} 
+			}; 
+			// end experience 
 		}
 	});
 });

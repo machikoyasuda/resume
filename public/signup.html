@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>	
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-responsive.css">
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/signup.js"></script>
+
+	<title>PRISM / Sign up</title>
+</head>
+<body>
+<!-- 	<div class="fb-root"></div>
+	<script>
+	  window.fbAsyncInit = function() {
+	    // init the FB JS SDK
+	    FB.init({
+	      appId      : '143608372501445',                    // App ID from the app dashboard
+	      status     : true,                                 // Check Facebook Login status
+	      xfbml      : true                                  // Look for social plugins on the page
+	    });
+
+		  // FB.login
+	  FB.login(function(response) {
+	   if (response.authResponse) {
+	     console.log('Welcome!  Fetching your information.... ');
+	     FB.api('/me', function(response) {	
+	     	$('#name').val(response.name);
+
+	       	console.log('Good to see you, ' + response.email + '.');
+	       	
+	     });
+	   } else {
+	     console.log('User cancelled login or did not fully authorize.');
+	   }
+	 }, {
+	 	scope: 'email,user_likes,user_website'
+	 });	
+	 };
+
+	  // Load the SDK asynchronously
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "//connect.facebook.net/en_US/all.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>-->
+
+<header><h1>Prism 0.1 / Register</h1></header>
+
+<div class="container">
+	<form id="userDataForm">
+		<div class="row">
+			<div class="span6">
+			<fieldset><!--biographical-->
+				<legend>Tell us about yourself:</legend>
+				
+				<div class="control-group">
+					<label class="control-label" for="name_first" name="name_first">First name:</label>
+				    <div class="controls">
+				    <input type="text" class="name_first" placeholder="Cookie">
+				    </div>
+				</div>
+				<div class="control-group">
+				    <label class="control-label" for="name_last">Last name:</label>
+				    <div class="controls">
+				    <input type="text" class="name_last" placeholder="Monster">
+				    </div>
+				</div>
+				<div class="control-group">
+				    <label class="control-label" for="website">Website:</label>
+				    <div class="controls">
+				    <input type="url" class="website" placeholder="http://www.website.com">
+				    </div>
+				</div>
+				<div class="control-group">
+				    <label class="control-label" for="linked_in">LinkedIn:</label>
+				    <div class="controls">
+				    <input type="url" class="linked_in" placeholder="http://www.LinkedIn.com">
+				    </div>
+				</div>
+				<div class="control-group">
+				    <label class="control-label" for="twitter">Twitter:</label>
+				 	<div class="controls">
+				    <input type="text" class="twitter" placeholder="username">
+				 	</div>
+				</div>
+			</fieldset>	
+			</div>
+			<div class="span6">
+			<fieldset><!--contact_info-->
+				<legend>How can we contact you:</legend>
+
+					  <div class="control-group">
+				    <label class="control-label" for="contact_info.email">E-mail:</label>
+				    <div class="controls">
+				      <input type="email" class="contact_info.email" placeholder="you@gmail.com">
+				    </div>
+				  </div>
+				  <div class="control-group">
+				    <label class="control-label" for="contact_info.phone">Phone:</label>
+				    <div class="controls">
+				      <input type="tel" class="contact_info.phone" placeholder="123-456-7890">
+				    </div>
+				  </div>
+				  <div class="control-group">
+				    <label class="control-label" for="contact_info.street_adress.street">Street address:</label>
+				    <div class="controls">
+				      <input type="text" class="contact_info.street_adress.street" placeholder="123 Seasame Street">
+				    </div>
+				  </div>
+				  <div class="control-group">
+				    <label class="control-label" for="contact_info.street_address.zip_code">Zip:</label>
+				    <div class="controls">
+				      <input type="number" pattern="[0-9]*" maxlength="5" min="0" class="contact_info.street_address.zip_code" placeholder="12345">
+				    </div>
+				  </div>
+				  <div class="control-group">
+				    <label class="control-label" for="contact_info.street_address.city">City:</label>
+				    <div class="controls">
+				      <input type="text" class="contact_info.street_address.city" placeholder="Los Angeles">
+				    </div>
+				  </div>
+				  <div class="control-group">
+				    <label class="control-label" for="contact_info.street_address.state">State:</label>
+				    <div class="controls">
+				      <input type="text" class="contact_info.street_address.state" placeholder="CA">
+				    </div>
+				  </div>
+			</fieldset>	
+			</div>
+		</div>
+
+		<fieldset><!--school-->
+			<legend>Tell us about your education:</legend>
+
+				<div class="school_group"><!--start schools group-->
+					<div class="control-group">
+				    	<label class="control-label" for="schools_id">School name:</label>
+				    <div class="controls">
+				      	<input type="text" class="schools_id" placeholder="Sesame School">
+				    </div>
+				  	</div>
+					<div class="control-group">
+				    	<label class="control-label" for="schools_major">Major(s):</label>
+				    <div class="controls">
+				      	<input type="text" class="schools_major" placeholder="Cookies">
+				    </div>
+				  	</div>
+					<div class="control-group">
+				    	<label class="control-label" for="schools_minor">Minor(s):</label>
+				    <div class="controls">
+				      	<input type="text" class="schools_minor" placeholder="Things">
+				    </div>
+				  	</div>
+					<div class="control-group">
+				    	<label class="control-label" for="schools_start_month_year">Start Month/Year:</label>
+				    <div class="controls">
+				     	<input type="month" for="schools_start_month_year" value="9;">
+				    </div>
+					</div>
+				 </div><!-- end school_group -->
+
+		 		<span class="help-block">
+		 			<a href="#" class="school_group_add">
+		 				Add another school
+		 			</a>
+		 		</span>
+		  		
+		</fieldset>
+		      
+		<fieldset><!--accomplishments-->
+			<legend>Tell us about your projects & accomplishments:</legend>
+
+				<div class="accomplishments_group"><!--start accomplishments group-->
+
+				<div class="control-group">
+			    <label class="control-label" for="accomplishments.title">Title:</label>
+			    <div class="controls">
+			      <input type="text" class="accomplishments.title" placeholder="Award, Project">
+			    </div>
+				</div>
+				<div class="control-group">
+			    <label class="control-label" for="accomplishments.description">About:</label>
+			    <div class="controls">
+			      <input type="text" class="accomplishments.description" placeholder="Tell me about your project">
+			    </div>
+				</div>
+				<div class="control-group">
+			    <label class="control-label" for="accomplishments.start_month_year">Month/Year:</label>
+			    <div class="controls">
+			     <input type="month" for="accomplishments.month_year" value="9;">
+			    </div>
+				</div>
+				</div>
+				<!--end accomplishments group-->
+				<span class="help-block">
+			 			<a href="#" class="accomplishments_group_add">
+			 				Add another accomplishment or project
+			 			</a>
+			 		</span>
+			 
+		</fieldset>
+
+		<fieldset><!--experiences-->
+			<legend>Tell us about your work experiences:</legend>
+
+				<div class="experiences_group">
+				<div class="control-group">
+			    <label class="control-label" for="experience.organization">Organization:</label>
+			    <div class="controls">
+			      <input type="text" class="experience.organization" placeholder="Employer, Organization Name">
+			    </div>
+				</div>
+				<div class="control-group">
+			    <label class="control-label" for="experience.role">Role:</label>
+			    <div class="controls">
+			      <input type="text" class="experience.role" placeholder="Role">
+			    </div>
+				</div>
+				<div class="control-group">
+			    <label class="control-label" for="experience.responsibilities">Responsibilities:</label>
+			    <div class="controls">
+			      <input type="text" class="experience.responsibilities" placeholder="List your tasks, responsibilities">
+			    </div>
+				</div>
+				<div class="control-group">
+			    <label class="control-label" for="experience.start_month_year">Start Month/Year:</label>
+			    <div class="controls">
+			     <input type="month" for="experience.start.month_year" value="9;">
+			    </div>
+				</div>
+				<div class="control-group">
+			    <label class="control-label" for="experience.end_month_year">End Month/Year:</label>
+			    <div class="controls">
+			     <input type="month" for="experience.end_month_year" value="9;">
+			    </div>
+				</div>
+				</div>
+			  	<!--end experiences group-->
+				<span class="help-block">
+		 			<a href="#" class="experiences_group_add">
+		 				Add another work experience
+		 			</a>
+		 		</span>
+		  		
+		</fieldset>
+
+		<fieldset><!--skills-->
+			<legend>Tell us about your skills:</legend>
+
+				<div class="skill_group">
+				<div class="control-group">
+			    <label class="control-label" for="skill.title">Skill:</label>
+			    <div class="controls">
+			      <input type="text" class="skill.title" placeholder="Technical skill, language, software">
+			    </div>
+				</div>
+				<div class="control-group">
+			    <label class="control-label" for="accomplishments.start_month_year">Level:</label>
+			    <div class="controls">
+			    <select>
+				  <option>1</option>
+				  <option>2</option>
+				  <option>3</option>
+				  <option>4</option>
+				  <option>5</option>
+				</select>
+			    </div>
+				</div>
+				</div>
+				<!--end skill group-->
+				<span class="help-block">
+		 			<a href="#" class="skill_group_add">
+		 				Add another skill
+		 			</a>
+		 		</span>
+
+		</fieldset>
+
+		<button class="btn btn-large btn-block btn-primary" type="submit">Submit</button>
+	</form>
+</div>
+<footer>Hand-coded by Machiko Yasuda / © 2013 Assembled in LA</footer>
+</body>
+</html>

@@ -3,7 +3,7 @@ $(document).ready(function(){
 		complete: function(response){
 
 			// experience
-			//function experienceLoop() {
+			function experienceLoop() {
 				var experience = response.responseJSON.experience; // set experience as hash
 				for (i = 0; i < experience.length; i++) { // loop
 					var experience_organization  = response.responseJSON.experience[i].organization; 
@@ -17,12 +17,13 @@ $(document).ready(function(){
 				console.log(response.responseJSON.experience[i]);
 				$('.timeline_experience').append("<div class='experience'>" + "<ul><li>" + experience_role + "</li><li>" + experience_responsibilities + "</li></ul>" + "</div>");
 
-				}
+				} // end loop // 
 			
 
 			console.log(response.responseJSON.experience[0]);
 
+			} // end function// 
 			experienceLoop();
-		}
-	});
-});
+		} // end function //
+	}); // end ajax call //
+}); // end dom ready function //
