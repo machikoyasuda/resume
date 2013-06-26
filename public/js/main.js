@@ -41,8 +41,8 @@ $(document).ready(function(){
 					var schools_minor = response.responseJSON.schools[i].minor;
 					var schools_start_month_year = response.responseJSON.schools[i].start_month_year;
 
-					console.log(response.responseJSON.schools[i].degree); // verify in console
-					console.log(schools_degree);
+					// console.log(response.responseJSON.schools[i].degree); // verify in console
+					// console.log(schools_degree);
 
 					$('.timeline_schools').append("<div class='schools'>" + "<ul><li>" + schools_degree + "</li><li>" + schools_major + "</li></ul>" + "</div>");
 				}
@@ -76,7 +76,7 @@ $(document).ready(function(){
 					var experience_location = response.responseJSON.experience[i].location;
 					var experience_responsibilities  = response.responseJSON.experience[i].responsibilities;
 
-				console.log(response.responseJSON.experience[i]);
+				// console.log(response.responseJSON.experience[i]);
 				$('.timeline_experience').append("<div class='experience'>" + "<ul><li>" + experience_role + "</li><li>" + experience_responsibilities + "</li></ul>" + "</div>");
 				} 
 			}; 
