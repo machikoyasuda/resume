@@ -44,19 +44,22 @@ $(document).ready(function() {
 	$('#userDataForm').submit(function() {
 		var userData = {}; // create new object named userData
 
-		// define keys and find class for values
+		// contact_info
+		userData.email 				= $('.email').val();
+		userData.phone				= $('.phone').val();
+
+		// contact_info.street_address
+		userData.city				= $('.city').val();
+		userData.state				= $('.state').val();
+		userData.street 			= $('.street').val();
+		userData.zip_code			= $('.zip_code').val();
+
+		// twitter, website, linkedin
 		userData.name_first 		= $('.name_first').val();
 		userData.name_last 			= $('.name_last').val();
 		userData.website			= $('.website').val();
 		userData.linked_in 			= $('.linked_in').val();
 		userData.twitter 			= $('.twitter').val();
-
-		userData.email 				= $('.email').val();
-		userData.phone				= $('.phone').val();
-		userData.street_address		= $('.street').val();
-		userData.zip_code			= $('.zip_code').val();
-		userData.city				= $('.city').val();
-		userData.state				= $('.state').val();
 
 		// school_groups
 		userData.schools = []; 
@@ -65,27 +68,33 @@ $(document).ready(function() {
 
 		// for each class, create array:
 		school_groups.each(function(index, item) {
+			var end 			= $(item).find('.end_month_year').val();
+			var end_month_year	= end.slice(5,7) + end.slice(2,4);
 			userData.schools.push({
 				name 			: $(item).find('.schools_id').val(),
 				major 			: $(item).find('.schools_major').val(),
 				minor			: $(item).find('.schools_minor').val(),
-				end_month_year	: $(item).find('.end_month_year').val(),
+				end_month_year	: end_month_year
 			}); // end .push loop
 			
 		}); // end .each function
 
 		// experiences_groups:
-		userData.experiences = []; 
+		userData.experiences 	= []; 
 
-		var experience_groups = $('.experiences_group'); // get each .class
+		var experience_groups 	= $('.experiences_group'); // get each .class
 
 		experience_groups.each(function(index, item) {
+			var exp_start 		= $(item).find('.start_month_year').val();
+			var exp_end			= $(item).find('.end_month_year').val();
+			var start_month_year= exp_start.slice(5,7) + exp_start.slice(2,4);
+			var end_month_year 	= exp_end.slice(5,7) + exp_end.slice(2,4);
 			userData.experiences.push({
 				organization	: $(item).find('.organization').val(),
 				role			: $(item).find('.role').val(), 
 				responsibilities: $(item).find('.responsibilities').val(),
-				start_month_year: $(item).find('.start_month_year').val(),
-				end_month_year: $(item).find('.end_month_year').val(),
+				start_month_year: start_month_year,
+				end_month_year	: end_month_year
 			});
 		});
 
@@ -106,13 +115,15 @@ $(document).ready(function() {
 		// projects & accomplishments
 		userData.accomplishments = [];
 
-		var accomplishments_groups = $('.accomplishments_group');
+		var accomplishments_groups	= $('.accomplishments_group');
 
 		accomplishments_groups.each(function(index, item) {
+			var date				= $(item).find('.month_year').val();
+			var month_year 			= date.slice(5,7) + date.slice(2,4);
 			userData.accomplishments.push({
 				title			: $(item).find('.title').val(),
 				description		: $(item).find('.description').val(),
-				month_year		: $(item).find('.month_year').val(),
+				month_year		: month_year
 			});
 		});
 
