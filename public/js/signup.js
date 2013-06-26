@@ -45,21 +45,23 @@ $(document).ready(function() {
 		var userData = {}; // create new object named userData
 
 		// contact_info
-		userData.email 				= $('.email').val();
-		userData.phone				= $('.phone').val();
+		userData.contact_info 							= [];
+		userData.contact_info.email 					= $('.email').val();
+		userData.contact_info.phone						= $('.phone').val();
 
 		// contact_info.street_address
-		userData.city				= $('.city').val();
-		userData.state				= $('.state').val();
-		userData.street 			= $('.street').val();
-		userData.zip_code			= $('.zip_code').val();
+		userData.contact_info.street_address 			= [];
+		userData.contact_info.street_address.city		= $('.city').val();
+		userData.contact_info.street_address.state		= $('.state').val();
+		userData.contact_info.street_address.street 	= $('.street').val();
+		userData.contact_info.street_address.zip_code	= $('.zip_code').val();
 
 		// twitter, website, linkedin
-		userData.name_first 		= $('.name_first').val();
-		userData.name_last 			= $('.name_last').val();
-		userData.website			= $('.website').val();
-		userData.linked_in 			= $('.linked_in').val();
-		userData.twitter 			= $('.twitter').val();
+		userData.name_first 							= $('.name_first').val();
+		userData.name_last 								= $('.name_last').val();
+		userData.website								= $('.website').val();
+		userData.linked_in 								= $('.linked_in').val();
+		userData.twitter 								= $('.twitter').val();
 
 		// school_groups
 		userData.schools = []; 
