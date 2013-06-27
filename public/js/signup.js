@@ -40,15 +40,6 @@ $(document).ready(function() {
 		return false;
 	});
 
-	// experiences responsibilities-add
-	$('.responsibilities_add').click(function() { 
-		var html = $('.responsibilities_add_group').first().clone();
-		html.css('display', 'none');
-		html.find('input').val('');
-		$(this).before(html);
-		html.slideDown(400);
-		return false;
-	});
 
 	// skill-add
 	$('.skill_group_add').click(function() {
@@ -60,7 +51,7 @@ $(document).ready(function() {
 		return false;
 	});
 
-	// pull #userDataForm submit values
+	// pull #userDataForm submit values into Object of key/values, arrays of key/values
 
 	$('#userDataForm').submit(function() {
 		var userData = {}; // create new object named userData
@@ -106,15 +97,15 @@ $(document).ready(function() {
 		// experiences_groups:
 		userData.experiences 	= []; 
 
-		var experience_groups 	= $('.experiences_group'); // get each .class
+		var experience_groups 	= $('.experiences_group');
 
 		experience_groups.each(function(index, item) {
 			var exp_start 		= $(item).find('.start_month_year').val();
 			var exp_end			= $(item).find('.end_month_year').val();
 			var start_month_year= exp_start.slice(5,7) + exp_start.slice(2,4);
 			var end_month_year 	= exp_end.slice(5,7) + exp_end.slice(2,4);
-			var responsibilities= [];
-			$(item).find('.responsibilities').each(function(index2, item2){
+			var responsibilities= []; // create responsibilities array
+			$(item).find('.responsibilities').each(function(index2, item2){ // get each responsibilities input, push into array
 				responsibilities.push($(item2).val());
 			});
 			userData.experiences.push({
@@ -129,16 +120,15 @@ $(document).ready(function() {
 		// skills
 		userData.skills = []; 
 
-		var skill_groups = $('.skill_group'); // get each .class
+		var skill_groups = $('.skill_group');
 
-		// for each class, create array
 		skill_groups.each(function(index, item) {
 			userData.skills.push({
 				title 			: $(item).find('.title').val(),
 				level 			: $(item).find('.level').val(),
-			}); // end .push loop
+			}); 
 			
-		}); // end .each function
+		}); 
 
 		// projects & accomplishments
 		userData.accomplishments = [];
@@ -152,7 +142,7 @@ $(document).ready(function() {
 				title			: $(item).find('.title').val(),
 				description		: $(item).find('.description').val(),
 				month_year		: month_year
-			});
+			}); 
 		});
 
 		console.log(userData);
