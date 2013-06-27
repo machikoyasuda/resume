@@ -30,6 +30,16 @@ $(document).ready(function() {
 		return false;
 	});
 
+	// experiences responsibilities-add
+	$('.responsibilities_add').click(function() { 
+		var html = $('.responsibilities_add_group').first().clone();
+		html.css('display', 'none');
+		html.find('input').val('');
+		$(this).before(html);
+		html.slideDown(400);
+		return false;
+	});
+
 	// skill-add
 	$('.skill_group_add').click(function() {
 		var html = $('.skill_group').first().clone();
@@ -73,7 +83,8 @@ $(document).ready(function() {
 			var end 			= $(item).find('.end_month_year').val();
 			var end_month_year	= end.slice(5,7) + end.slice(2,4);
 			userData.schools.push({
-				name 			: $(item).find('.schools_id').val(),
+				name 			: $(item).find('.schools_name').val(),
+				degree			: $(item).find('.schools_degree').val(),
 				major 			: $(item).find('.schools_major').val(),
 				minor			: $(item).find('.schools_minor').val(),
 				end_month_year	: end_month_year
@@ -91,14 +102,21 @@ $(document).ready(function() {
 			var exp_end			= $(item).find('.end_month_year').val();
 			var start_month_year= exp_start.slice(5,7) + exp_start.slice(2,4);
 			var end_month_year 	= exp_end.slice(5,7) + exp_end.slice(2,4);
+			var responsibilities= [];
+			$(item).find('.responsibilities').each(function(index2, item2){
+				responsibilities.push($(item2).val());
+			});
 			userData.experiences.push({
 				organization	: $(item).find('.organization').val(),
 				role			: $(item).find('.role').val(), 
-				responsibilities: $(item).find('.responsibilities').val(),
+				responsibilities: responsibilities,
 				start_month_year: start_month_year,
 				end_month_year	: end_month_year
 			});
 		});
+
+		
+			
 
 		// skills
 		userData.skills = []; 
