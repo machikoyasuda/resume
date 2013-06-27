@@ -43,7 +43,7 @@ $(document).ready(function(){
 					// console.log(response.responseJSON.schools[i].degree); // verify in console
 					// console.log(schools_degree);
 
-					$('.timeline_schools').append("<div class='schools'>" + "<h5>" + schools_name + "</h5>" + "</hr>" + "<hr>" + "<ul><li>" + schools_degree + "</li><li>" + schools_major + "</li></ul>" + "</div>");
+					$('.timeline_schools').append("<div class='schools well well-small'>" + "<h5>" + schools_name + "</h5>" + "</hr>" + "<hr>" + "<ul><li>" + schools_degree + "</li><li>" + schools_major + "</li></ul>" + "</div>");
 				}
 			};
 			// end schools
@@ -57,7 +57,7 @@ $(document).ready(function(){
 					var accomplishments_month_year = response.responseJSON.accomplishments[i].month_year; 
 
 					//console.log(response.responseJSON.accomplishments[i]);
-					$('.timeline_accomplishments').append("<div class='accomplishments'>" + "<h5>" + accomplishments_title + "</h5>" + "<hr>" + accomplishments_descriptions + "</div>");
+					$('.timeline_accomplishments').append("<div class='accomplishments well well-small'>" + "<h5>" + accomplishments_title + "</h5>" + "<hr>" + accomplishments_descriptions + "</div>");
 
 				}
 			};
@@ -76,7 +76,7 @@ $(document).ready(function(){
 					var experience_responsibilities  = response.responseJSON.experience[i].responsibilities;
 
 				// console.log(response.responseJSON.experience[i]);
-				$('.timeline_experience').append("<div class='experience'>" + "<h5>" + experience_role + " @ " + experience_organization + "</h5>" +  "<hr>" + experience_responsibilities + "</div>");
+				$('.timeline_experience').append("<div class='experience well well-small'>" + "<h5>" + experience_role + " @ " + experience_organization + "</h5>" +  "<hr>" + experience_responsibilities + "</div>");
 				} 
 			}; 
 			// end experience 
