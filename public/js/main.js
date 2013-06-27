@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	$.ajax('/api/resumes/51c209393b22bf56db000001', {
-		complete: function(response){
+		// send ajax request to getting data from /api/resumes/id
+		complete: function(response){ // when the request is complete:
 			// fullName
 			var first = response.responseJSON.name_first;
 			var last = response.responseJSON.name_last;
@@ -42,7 +43,6 @@ $(document).ready(function(){
 
 					// console.log(response.responseJSON.schools[i].degree); // verify in console
 					// console.log(schools_degree);
-
 					$('.timeline_schools').append("<div class='schools well well-small'>" + "<h5>" + schools_name + "</h5>" + "</hr>" + "<hr>" + "<ul><li>" + schools_degree + "</li><li>" + schools_major + "</li></ul>" + "</div>");
 				}
 			};
@@ -58,7 +58,6 @@ $(document).ready(function(){
 
 					//console.log(response.responseJSON.accomplishments[i]);
 					$('.timeline_accomplishments').append("<div class='accomplishments well well-small'>" + "<h5>" + accomplishments_title + "</h5>" + "<hr>" + accomplishments_descriptions + "</div>");
-
 				}
 			};
 			// end accomplishments
@@ -75,8 +74,8 @@ $(document).ready(function(){
 					var experience_location = response.responseJSON.experience[i].location;
 					var experience_responsibilities  = response.responseJSON.experience[i].responsibilities;
 
-				// console.log(response.responseJSON.experience[i]);
-				$('.timeline_experience').append("<div class='experience well well-small'>" + "<h5>" + experience_role + " @ " + experience_organization + "</h5>" +  "<hr>" + experience_responsibilities + "</div>");
+					// console.log(response.responseJSON.experience[i]);
+					$('.timeline_experience').append("<div class='experience well well-small'>" + "<h5>" + experience_role + " @ " + experience_organization + "</h5>" +  "<hr>" + experience_responsibilities + "</div>");
 				} 
 			}; 
 			// end experience 
