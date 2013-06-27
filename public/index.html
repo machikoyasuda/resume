@@ -2,8 +2,8 @@
 <html lang="en">
 <head>	
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
-	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,400' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700,300italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/bootstrap-responsive.css">
@@ -53,6 +53,7 @@
     </style>
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/request.js"></script>
 	<title>PRISM /</title>
 </head>
 <body>
@@ -142,20 +143,20 @@
 			</section>-->
 			<section>			
 				<div class="well well-small span4 pull-right">
-					<ul>
-						<li>@<span class="twitter"></span></li>
-						<li><a class="website" target="_blank" href=""></a></li>
+					<ul style="list-style-type: none;">
+						<li><span class="address"></span></li>
+						<li>@<span class="twitter"></span> | <a class="website" target="_blank" href=""></a></li>
 						<li><span class="email"></span></li>
 					</ul>
 				</div>
 				<h2 class="name"></h2>
-				<h3>education</h3>
+				<h3>Education</h3>
 				<div class="timeline_schools"><!-jQuery .schools-></div>
 
-				<h3>work</h3>
+				<h3>Work</h3>
 				<div class="timeline_experience"><!-jQuery.experiences-></div>
 
-				<h3>awards & projects</h3>
+				<h3>Awards & Projects</h3>
 				<div class="timeline_accomplishments"><!-jQuery .accomplishments-></div>
 			<!--<aside id="history-summary">
 					<ul>
@@ -168,8 +169,9 @@
 				</aside>
 				<h3>Your notes:</h3>
 					<textarea id="note" name="textarea">Write something here</textarea>-->
+				<h3>Skills</h3>
 			</section>
-			<form><button class="btn btn-large btn-block btn-danger" type="submit">Delete</button></form>
+			<form><button class="btn btn-large btn-block btn-danger delete" type="submit">Delete</button></form>
 		</div><!-container->
 		<div class="push"><!--//--></div>
 	</div><!-wrapper->
