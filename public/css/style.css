@@ -1,22 +1,25 @@
-/* Machiko's wireframe CSS */
-
 header {
 	background-color: #333;
 	color: #fff;
 	padding-top: 1px;
 }
 
+/* name */
 h2 {
 	border-bottom: 2px solid #000;
 }
 
+/* education, work, awards */
 h3 {
 	margin-bottom: 10px;
+	font-weight: 300;
+	font-style: italic;
+	font-size: 28px;
 }
 
-/*header hgroup h2 {
-	color: #ffd707;
-}*/
+p {
+	font-family: "Vollkorn";
+}
 
 body {
 	background-color: #000;
@@ -101,10 +104,7 @@ nav li.first {
 	border-radius:6px;
 }
 
-#search-summary table tr {
-}
-
-#history-summary {
+/*#history-summary {
 	width: 20%;
 	float: right;
 }
@@ -120,7 +120,7 @@ nav li.first {
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
 	border-radius:6px;
-}
+}*/
 
 .timeline_schools, .timeline_accomplishments, .timeline_experience {
 	width: 90%;
@@ -156,9 +156,9 @@ nav li.first {
 }
 
 .accomplishments:before, .schools:before, .experience:before {
-	content: "enddate";
-	position: absolute;
-	top: -30px;
+	content: attr(data-content);
+	position: relative;
+	top: -50px;
 }
 
 .accomplishments:hover, .schools:hover, .experience:hover {
@@ -168,7 +168,6 @@ nav li.first {
 .skill {
 	display: inline-block;
 	width: 20%;
-
 	background: #e3e3e3;
 	margin-top: 15px;
 	-moz-border-radius:6px;
@@ -188,7 +187,6 @@ nav li.first {
 
 }
 
-
 .skill:before {
 	content: "enddate";
 	position: absolute;
@@ -200,7 +198,7 @@ nav li.first {
 }
 
 
-textarea#note{
+/*textarea#note{
 	color:#666;
 	font-size:14px;
 	-moz-border-radius: 8px; 
@@ -220,5 +218,5 @@ textarea#note:focus{
 	border:#f03 1px solid;
 }
 
-
+*/
 
