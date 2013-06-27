@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$.ajax('/api/resumes/51c209393b22bf56db000001', {
-		// send ajax request to getting data from /api/resumes/id
+		// send ajax request to get data from /api/resumes/id
 		complete: function(response){ // when the request is complete:
 			// fullName
 			var first = response.responseJSON.name_first;
@@ -39,11 +39,11 @@ $(document).ready(function(){
 					var schools_degree = response.responseJSON.schools[i].degree;
 					var schools_major = response.responseJSON.schools[i].major;
 					var schools_minor = response.responseJSON.schools[i].minor;
-					var schools_start_month_year = response.responseJSON.schools[i].start_month_year;
+					var schools_end_month_year = response.responseJSON.schools[i].end_month_year;
 
 					// console.log(response.responseJSON.schools[i].degree); // verify in console
 					// console.log(schools_degree);
-					$('.timeline_schools').append("<div class='schools well well-small'>" + "<h5>" + schools_name + "</h5>" + "</hr>" + "<hr>" + "<ul><li>" + schools_degree + "</li><li>" + schools_major + "</li></ul>" + "</div>");
+					$('.timeline_schools').append("<div class='schools well well-small' data-content='" + schools_end_month_year + "'>" + "<h5>" + schools_name + "</h5>" + "<hr><p>" + schools_major + ", "+ schools_degree + "</p></div>");
 				}
 			};
 			// end schools
@@ -51,13 +51,12 @@ $(document).ready(function(){
 			// start accomplishments
 			function accomplishmentsLoop() {
 				var accomplishments = response.responseJSON.accomplishments; // set accomplishments as hash
-				for (i = 0; i < accomplishments.length; i++) { // loop
+				for (i = 0; i < accomplishments.length; i++) { // loop through each accomplishment to make variables out of values
 					var accomplishments_title = response.responseJSON.accomplishments[i].title;
 					var accomplishments_descriptions = response.responseJSON.accomplishments[i].description; 
 					var accomplishments_month_year = response.responseJSON.accomplishments[i].month_year; 
 
-					//console.log(response.responseJSON.accomplishments[i]);
-					$('.timeline_accomplishments').append("<div class='accomplishments well well-small'>" + "<h5>" + accomplishments_title + "</h5>" + "<hr>" + accomplishments_descriptions + "</div>");
+					$('.timeline_accomplishments').append("<div class='accomplishments well well-small' data-content='" + accomplishments_month_year + "'>" + "<h5>" + accomplishments_title + "</h5><hr><p>" + accomplishments_descriptions + "</p></div>");
 				}
 			};
 			// end accomplishments
@@ -75,7 +74,7 @@ $(document).ready(function(){
 					var experience_responsibilities  = response.responseJSON.experience[i].responsibilities;
 
 					// console.log(response.responseJSON.experience[i]);
-					$('.timeline_experience').append("<div class='experience well well-small'>" + "<h5>" + experience_role + " @ " + experience_organization + "</h5>" +  "<hr>" + experience_responsibilities + "</div>");
+					$('.timeline_experience').append("<div class='experience well well-small' data-content='" + experience_end_month_year + "'>" + "<h5>" + experience_role + " @ " + experience_organization + "</h5><hr><p>" + experience_responsibilities + "</p></div>");
 				} 
 			}; 
 			// end experience 

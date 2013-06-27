@@ -55,14 +55,14 @@ $(document).ready(function() {
 
 	$('#userDataForm').submit(function() {
 		var userData = {}; // create new object named userData
-
-		// contact_info - create array contact_info in userData
-		userData.contact_info 							= [];
+		window.userData = userData;
+		// contact_info - create object contact_info in userData
+		userData.contact_info 							= {};
 		userData.contact_info.email 					= $('.email').val();
 		userData.contact_info.phone						= $('.phone').val();
 
-		// contact_info.street_address - create array in contact_info, street_address
-		userData.contact_info.street_address 			= [];
+		// contact_info.street_address - create object in contact_info, street_address
+		userData.contact_info.street_address 			= {};
 		userData.contact_info.street_address.city		= $('.city').val();
 		userData.contact_info.street_address.state		= $('.state').val();
 		userData.contact_info.street_address.street 	= $('.street').val();
@@ -136,16 +136,24 @@ $(document).ready(function() {
 		var accomplishments_groups= $('.accomplishments_group');
 
 		accomplishments_groups.each(function(index, item) {
-			var date				= $(item).find('.month_year').val();
-			var month_year 			= date.slice(5,7) + date.slice(2,4);
+			var date			= $(item).find('.month_year').val();
+			var month_year 		= date.slice(5,7) + date.slice(2,4);
 			userData.accomplishments.push({
 				title			: $(item).find('.title').val(),
 				description		: $(item).find('.description').val(),
 				month_year		: month_year
 			}); 
 		});
-
 		console.log(userData);
+
+		var postData = JSON.stringify ({'resume': userData});
+		
+		console.log(postData);
+		$.ajax({
+			type: 'POST',
+			url: '/api/resumes',
+			data: postData
+		}).done(function(){alert("Data saved");});
 		return false;
 	});
 });
