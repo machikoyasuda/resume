@@ -1,7 +1,6 @@
 $(document).ready(function(){
 	$.ajax('/api/resumes/51c209393b22bf56db000001', {
 		complete: function(response){
-
 			// fullName
 			var first = response.responseJSON.name_first;
 			var last = response.responseJSON.name_last;
@@ -35,7 +34,7 @@ $(document).ready(function(){
 			function schoolLoop() {
 				var schools = response.responseJSON.schools; // set schools as hash
 				for (i = 0; i < schools.length; i++) { // loop
-					var schools_id = response.responseJSON.schools[i]._id;
+					var schools_name = response.responseJSON.schools[i].name;
 					var schools_degree = response.responseJSON.schools[i].degree;
 					var schools_major = response.responseJSON.schools[i].major;
 					var schools_minor = response.responseJSON.schools[i].minor;
@@ -44,7 +43,7 @@ $(document).ready(function(){
 					// console.log(response.responseJSON.schools[i].degree); // verify in console
 					// console.log(schools_degree);
 
-					$('.timeline_schools').append("<div class='schools'>" + "<ul><li>" + schools_degree + "</li><li>" + schools_major + "</li></ul>" + "</div>");
+					$('.timeline_schools').append("<div class='schools'>" + "<h5>" + schools_name + "</h5>" + "</hr>" + "<hr>" + "<ul><li>" + schools_degree + "</li><li>" + schools_major + "</li></ul>" + "</div>");
 				}
 			};
 			// end schools
@@ -54,11 +53,11 @@ $(document).ready(function(){
 				var accomplishments = response.responseJSON.accomplishments; // set accomplishments as hash
 				for (i = 0; i < accomplishments.length; i++) { // loop
 					var accomplishments_title = response.responseJSON.accomplishments[i].title;
-					var accomplishments_descriptions = response.responseJSON.accomplishments[i].descriptions; 
+					var accomplishments_descriptions = response.responseJSON.accomplishments[i].description; 
 					var accomplishments_month_year = response.responseJSON.accomplishments[i].month_year; 
 
 					//console.log(response.responseJSON.accomplishments[i]);
-					$('.timeline_accomplishments').append("<div class='accomplishments'>" + "<ul><li>" + accomplishments_title + "</li><li>" + accomplishments_descriptions + "</li></ul>" + "</div>");
+					$('.timeline_accomplishments').append("<div class='accomplishments'>" + "<h5>" + accomplishments_title + "</h5>" + "<hr>" + accomplishments_descriptions + "</div>");
 
 				}
 			};
@@ -77,7 +76,7 @@ $(document).ready(function(){
 					var experience_responsibilities  = response.responseJSON.experience[i].responsibilities;
 
 				// console.log(response.responseJSON.experience[i]);
-				$('.timeline_experience').append("<div class='experience'>" + "<ul><li>" + experience_role + "</li><li>" + experience_responsibilities + "</li></ul>" + "</div>");
+				$('.timeline_experience').append("<div class='experience'>" + "<h5>" + experience_role + " @ " + experience_organization + "</h5>" +  "<hr>" + experience_responsibilities + "</div>");
 				} 
 			}; 
 			// end experience 
