@@ -17,13 +17,15 @@ h3 {
 	font-size: 28px;
 }
 
+h5 {
+	margin-top: -20px;
+	margin-bottom: -20px;
+}
+
 p {
 	font-family: "Vollkorn";
 }
 
-body {
-	background-color: #000;
-}
 
 /*nav {
 	background: #222;
@@ -90,20 +92,6 @@ nav li.first {
 }
 */
 
-#search-summary {
-	width: 30%;
-	float: right;
-}
-
-#search-summary {
-	background-color: #ffd707;
-	color: #000;
-	font-size: 12px;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-}
-
 /*#history-summary {
 	width: 20%;
 	float: right;
@@ -130,16 +118,24 @@ nav li.first {
 	position: relative;
 }
 
+.timeline_skills {
+	width: 90%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	position: relative;
+}
+
 .accomplishments, .schools, .experience {
 	display: inline-block;
 	width: 20%;
-	background: #e3e3e3;
 	margin-top: 10px;
 	margin-right: 10px;
-	padding: 2px;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
+	vertical-align: top;
+}
+
+.skills {
+	display: inline-block;
+	width: 300px;
 	vertical-align: top;
 }
 
@@ -152,7 +148,6 @@ nav li.first {
 	border: 1px solid #222;
 	width: 7px;
 	height: 7px;
-
 }
 
 .accomplishments:before, .schools:before, .experience:before {
@@ -161,39 +156,7 @@ nav li.first {
 	top: -50px;
 }
 
-.accomplishments:hover, .schools:hover, .experience:hover {
-	background-color: #fff;
-}
-
-.skill {
-	display: inline-block;
-	width: 20%;
-	background: #e3e3e3;
-	margin-top: 15px;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-}
-
-.skill:after {
-	position: absolute;
-	background: #f03;
-	top:-20px;
-	content: "  ";
-	border-radius: 1%;
-	border: 1px solid #222;
-	width: 7px;
-	height: 30px;
-
-}
-
-.skill:before {
-	content: "enddate";
-	position: absolute;
-	top: -40px;
-}
-
-.skill:hover {
+.accomplishments:hover, .schools:hover, .experience:hover, .skills:hover {
 	background-color: #fff;
 }
 
@@ -209,8 +172,6 @@ nav li.first {
 	width:550px;
 	border:#999 1px solid;
 }
-
-
 
 textarea#note:focus{
 	color:#000;
