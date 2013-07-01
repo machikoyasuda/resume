@@ -17,7 +17,6 @@ $(document).ready(function(){
 	$('section').css('display', 'none');
 	$('section').hide().fadeIn(1000).slideDown(1000);
 
-
 	$.ajax('/api/resumes/51cccc883b22bf5115000024', {
 		// send ajax request to get data from /api/resumes/id
 		complete: function(response){ // when the request is complete:
@@ -128,7 +127,8 @@ $(document).ready(function(){
 					$(experience[i].responsibilities).each(function(index, item){
 						//alert(index + " : " + item);
 						//alert(experience[0].responsibilities[3].length); returns 0
-						
+						console.log(experience[i+1].responsibilities[])
+
 						if(experience[i].responsibilities[i2].length = 0){
 							$(experience[i].responsibilities[i2]).remove();
 						}
