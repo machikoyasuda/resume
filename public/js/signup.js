@@ -146,13 +146,13 @@ $(document).ready(function() {
 		});
 		console.log(userData);
 
-		var postData = JSON.stringify ({'resume': userData});
+		var postData = JSON.stringify ({'resume': userData});	// make a string to input into DB
 		
 		console.log(postData);
-		$.ajax({
-			type: 'POST',
-			url: '/api/resumes',
-			data: postData
+		$.ajax({												// ask AJAX to:
+			type: 'POST',										// POST
+			url: '/api/resumes',								// to /api/resumes
+			data: postData										// the postData
 		}).done(function(){alert("Data saved");});
 		return false;
 	});
