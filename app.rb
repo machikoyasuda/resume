@@ -61,8 +61,10 @@ class School
   field :gpa,               type: Float
   field :major,             type: String
   field :minor,             type: String
-  field :start_month_year,  type: String
-  field :end_month_year,    type: String
+  field :start_month,       type: Integer
+  field :start_year,        type: Integer
+  field :end_month,         type: Integer
+  field :end_year,          type: Integer
   
   embedded_in :doc
 end
@@ -73,8 +75,10 @@ class Experience
   field :organization,      type: String
   field :project,           type: String
   field :role,              type: String
-  field :start_month_year,  type: String
-  field :end_month_year,    type: String
+  field :start_month,       type: Integer
+  field :start_year,        type: Integer
+  field :end_month,         type: Integer
+  field :end_year,          type: Integer
   field :location,          type: String
   field :responsibilities,  type: Array
   
@@ -95,7 +99,8 @@ class Accomplishment
   include Mongoid::Document
   
   field :title,       type: String
-  field :month_year,  type: String
+  field :month,       type: Integer
+  field :year,        type: Integer
   field :description, type: String
   
   embedded_in :doc
