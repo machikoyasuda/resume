@@ -1,62 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>	
-		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,400' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/bootstrap.css">
-		<link rel="stylesheet" href="css/bootstrap-responsive.css">
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,400' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap-responsive.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/signup.js"></script>
+	<style>
+    html, body {
+        height: 100%;
+    }
+    footer {
+        color: #666;
+        background: #222;
+        padding: 17px 0 18px 0;
+        border-top: 1px solid #000;    
+    }
+    footer a {
+        color: #999;
+    }
+    footer a:hover {
+        color: #efefef;
+    }
+    .wrapper {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        margin: 0 auto -63px;
+    }
+    .push {
+        height: 63px;
+    }
+    /* responsive footer fix by Aalaap Ghag */
+    @media (max-width: 767px) {
+        body {
+            padding-right: 0px;
+            padding-left: 0px;
+        }
 
-		<script type="text/javascript" src="js/jquery.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
-		<script type="text/javascript" src="js/signup.js"></script>
-		<style>
-        html, body {
-            height: 100%;
+        footer, .wrapper {
+            padding-left: 20px;
+            padding-right: 20px;
         }
-        footer {
-            color: #666;
-            background: #222;
-            padding: 17px 0 18px 0;
-            border-top: 1px solid #000;    
-        }
-        footer a {
-            color: #999;
-        }
-        footer a:hover {
-            color: #efefef;
-        }
-        .wrapper {
-            min-height: 100%;
-            height: auto !important;
-            height: 100%;
-            margin: 0 auto -63px;
-        }
-        .push {
-            height: 63px;
-        }
- 
-        /* responsive footer fix by Aalaap Ghag */
-        @media (max-width: 767px) {
-            body {
-                padding-right: 0px;
-                padding-left: 0px;
-            }
-    
-            footer, .wrapper {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-        }
- 
-        .container {
-            max-width: 940px;
-        }
-        /* end responsive footer fix */
-   	 	</style>
-		<title>PRISM / Sign up</title>
+    }
+    .container {
+        max-width: 940px;
+    }
+    /* end responsive footer fix */
+	 </style>
+	<title>PRISM / Sign up</title>
 </head>
 <body>
 <!--<div class="fb-root"></div>
@@ -147,7 +144,6 @@
 					<div class="span6">
 					<fieldset><!--contact_info-->
 						<legend>How can we contact you:</legend>
-
 							  <div class="control-group">
 						    <label class="control-label" for="email">E-mail:</label>
 						    <div class="controls input-append">
@@ -395,7 +391,6 @@
 					 			</a>
 					 	</span>		 
 				</fieldset>
-
 				<button class="btn btn-large btn-block btn-primary" type="submit">Submit</button>
 			</form>
 		</div><!-container->

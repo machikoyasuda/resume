@@ -17,7 +17,7 @@ module Mongoid
 end
 
 class Doc
-  include Mongoid::Document
+  include Mongoid::Document 
   
   field :name_first, type: String
   field :name_last,  type: String
@@ -61,10 +61,10 @@ class School
   field :gpa,               type: Float
   field :major,             type: String
   field :minor,             type: String
-  field :start_month,       type: Integer
-  field :start_year,        type: Integer
-  field :end_month,         type: Integer
-  field :end_year,          type: Integer
+  field :start_month,       type: Integer ##new
+  field :start_year,        type: Integer ##new
+  field :end_month,         type: Integer ##new
+  field :end_year,          type: Integer ##new
   
   embedded_in :doc
 end
@@ -75,10 +75,10 @@ class Experience
   field :organization,      type: String
   field :project,           type: String
   field :role,              type: String
-  field :start_month,       type: Integer
-  field :start_year,        type: Integer
-  field :end_month,         type: Integer
-  field :end_year,          type: Integer
+  field :start_month,       type: Integer ##new
+  field :start_year,        type: Integer ##new
+  field :end_month,         type: Integer ##new
+  field :end_year,          type: Integer ##new 
   field :location,          type: String
   field :responsibilities,  type: Array
   
@@ -99,8 +99,8 @@ class Accomplishment
   include Mongoid::Document
   
   field :title,       type: String
-  field :month,       type: Integer
-  field :year,        type: Integer
+  field :month,       type: Integer     ##new 
+  field :year,        type: Integer     ##new
   field :description, type: String
   
   embedded_in :doc
@@ -118,7 +118,7 @@ get '/api/resumes' do
   docs.to_json
 end
 
-get '/api/resumes/:id' do
+get '/api/resumes/:id' do                               
   content_type :json
   
   begin

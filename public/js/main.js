@@ -17,7 +17,7 @@ $(document).ready(function(){
 	$('section').css('display', 'none');
 	$('section').hide().fadeIn(1000).slideDown(1000);
 
-	$.ajax('/api/resumes/51cccc883b22bf5115000024', {
+	$.ajax('/api/resumes/51ccc3273b22bf5115000005', {
 		// send ajax request to get data from /api/resumes/id
 		complete: function(response){ // when the request is complete:
 			// fullName
@@ -119,7 +119,7 @@ $(document).ready(function(){
 				
 					$(".timeline_experience").append("<div class='experience well well-small' data-content='" + experience_month_year + "'>" + "<h5>" + experience_role + " @ " + experience_organization + "</h5>" + "<hr><ul style='margin-top: 30px; list-style-type: square;'></ul>");
 					
-					//console.log(response.responseJSON.experiences[i].responsibilities);
+					console.log(response.responseJSON.experiences[i].responsibilities);
 					console.log(experience[i]);
 					console.log(experience[i].responsibilities);
 					// console.log(experience[i].responsibilities.length); returns 4
@@ -127,7 +127,7 @@ $(document).ready(function(){
 					$(experience[i].responsibilities).each(function(index, item){
 						//alert(index + " : " + item);
 						//alert(experience[0].responsibilities[3].length); returns 0
-						console.log(experience[i+1].responsibilities[])
+						//console.log(experience[i+1].responsibilities[])
 
 						if(experience[i].responsibilities[i2].length = 0){
 							$(experience[i].responsibilities[i2]).remove();
