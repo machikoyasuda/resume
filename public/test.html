@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>
+    <title>R&eacute;sum&eacute;</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript">
+    var data = {"resume":{"name_first":"Susan", "id": "51d3796b3b22bf2ccf000001"}};
+    var data_update = {"resume":{"name_first":"Fred", "id":"51d37ae13b22bf2ccf000002"}};
+
+    $(function() {
+      $('#create').on('click', function() {
+        $.ajax({
+          method: 'POST',
+          url: '/',
+          data: JSON.stringify(data)
+        });
+      });
+
+      var del_id = data.resume.id;  
+      $('#delete').on('click', function() {
+        $.ajax({
+          method: 'DELETE',
+          url: '/'+ del_id
+        });
+      });
+
+      var update_id = data_update.resume.id;  
+      $('#update').on('click', function() {
+        $.ajax({
+          method: 'PUT',
+          url: '/'+ update_id,
+          data: JSON.stringify(data_update),
+          success: function(msg) {
+            console.log("Update success");
+          }
+        });
+      });
+    });
+    </script>
+  </head>
+
+  <body>
+    <button id="create">Create</button>
+    <button id="delete">Delete</button>
+    <button id="update">Update</button>
+  </body>
+</html>
